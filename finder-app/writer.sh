@@ -18,6 +18,9 @@ else
   exit 1
 fi
 
+# Create the directory path if it doesn't exist
+mkdir -p "$(dirname "$writefile")"
+
 #Writing into the new file
 echo "${writestr}" > ${writefile}
 
@@ -26,4 +29,5 @@ then
         echo "Failed to write ${writefile} file"
       	exit 1
 fi
+
 exit 0
